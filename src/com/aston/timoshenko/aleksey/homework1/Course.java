@@ -2,16 +2,15 @@ package com.aston.timoshenko.aleksey.homework1;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public final class Course {
     private final String courseName;
     private final List<Student> students;
 
-    public Course(String name, List<Student> students) {
-        this.courseName = name;
+    public Course(String courseName, List<Student> students) {
+        this.courseName = courseName;
         if (students != null) {
-            this.students = students.stream().map(Student::new).collect(Collectors.toCollection(ArrayList::new));
+            this.students = students.stream().map(Student::new).toList();
         } else {
             this.students = new ArrayList<>();
         }
